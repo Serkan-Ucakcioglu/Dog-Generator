@@ -3,21 +3,17 @@ import { reactive } from "@vue/reactivity";
 import { onMounted } from "@vue/runtime-core";
 import axios from "axios";
 
-
-
 interface apiType {
   message: string;
 }
 
-
 const data: apiType = reactive({
-  message: '',
-})
-
+  message: "",
+});
 
 const getApi = () => {
   axios.get<apiType>("https://dog.ceo/api/breeds/image/random").then((res) => {
-    data.message = res.data.message
+    data.message = res.data.message;
     console.log(data);
   });
 };
