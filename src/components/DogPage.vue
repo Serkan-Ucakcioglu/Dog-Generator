@@ -4,16 +4,16 @@ import { onMounted } from "@vue/runtime-core";
 import axios from "axios";
 
 interface apiType {
-  message: string;
+  url: string;
 }
 
 const data: apiType = reactive({
-  message: "",
+  url: "",
 });
 
 const getApi = () => {
   axios.get<apiType>("https://dog.ceo/api/breeds/image/random").then((res) => {
-    data.message = res.data.message;
+    data.url = res.data.url;
     console.log(data);
   });
 };
@@ -25,7 +25,7 @@ onMounted(getApi);
   <div class="container">
     <div class="dog_wrapper">
       <button @click="getApi">Change Photo</button>
-      <img loading="lazy" :src="data.message" alt="" />
+      <img v-if="data.url" loading="lazy" :src="data.url" alt="" />
     </div>
   </div>
 </template>
