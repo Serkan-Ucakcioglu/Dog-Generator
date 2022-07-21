@@ -3,10 +3,14 @@ import { ref } from "@vue/reactivity";
 import { onMounted } from "@vue/runtime-core";
 import axios from "axios"
 
-const data = ref([])
+const data = ref()
+
+interface apiType {
+  message: URL;
+}
 
 const getApi = () => {
-   axios.get('https://dog.ceo/api/breeds/image/random')
+   axios.get<apiType>('https://dog.ceo/api/breeds/image/random')
   .then( res => {
     data.value = res.data
   })
