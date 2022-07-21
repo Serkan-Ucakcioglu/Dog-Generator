@@ -24,7 +24,7 @@ onMounted(getApi);
 <template>
   <div class="container">
     <div class="dog_wrapper">
-      <button @click="getApi">Photo Change</button>
+      <button @click="getApi">Change Photo</button>
       <img loading="lazy" :src="data.message" alt="" />
     </div>
   </div>
