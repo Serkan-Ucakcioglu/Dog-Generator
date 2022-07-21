@@ -1,9 +1,9 @@
 <script setup lang="ts">
-import HelloWorld from "./components/HelloWorld.vue";
+import DogPage from "./components/DogPage.vue";
 </script>
 
 <template>
-  <HelloWorld />
+  <DogPage />
 </template>
 
 <style lang="scss">
@@ -14,5 +14,11 @@ import HelloWorld from "./components/HelloWorld.vue";
   text-align: center;
   color: #2c3e50;
   margin-top: 60px;
+}
+
+.container{
+  max-width: 1200px;
+  width: 90%;
+  margin: 0px auto;
 }
 </style>
